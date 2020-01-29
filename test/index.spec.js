@@ -22,3 +22,36 @@ describe('convertAbsolute, debe convertir una ruta relativa a una  absoluta', ()
     expect(route.convertAbsolute(inputRelative)).toEqual(route.convertAbsolute(outPutAbsolute));
   });
 });
+describe('file, debe devolver un valor booleano', () => {
+  it('Debería ser una función', () => {
+    expect(typeof route.file).toBe('function');
+  });
+  it('Debería devolver true si es un archivo', () => {
+    expect(route.file('/home/cielo/Documentos/Markdown-Links/LIM011-fe-md-links/README.md')).toBe(true);
+  });
+  it('Debería devolver false si no es un archivo', () => {
+    expect(route.file('/home/cielo/Documentos/Markdown-Links/LIM011-fe-md-links/')).toBe(false);
+  });
+});
+describe('directory, debe devolver un valor booleano', () => {
+  it('Debería ser una función', () => {
+    expect(typeof route.directory).toBe('function');
+  });
+  it('Debería devolver true si es un directorio', () => {
+    expect(route.directory('/home/cielo/Documentos/Markdown-Links/LIM011-fe-md-links/')).toBe(true);
+  });
+  it('Debería devolver false si no es un directorio', () => {
+    expect(route.directory('/home/cielo/Documentos/Markdown-Links/LIM011-fe-md-links/README.md')).toBe(false);
+  });
+});
+describe('md, debe devolver un valor Booleano', () => {
+  it('Debería ser una función', () => {
+    expect(typeof route.md).toBe('function');
+  });
+  it('Debería devolver true si es un archivo md', () => {
+    expect(route.md('README.md')).toBe(true);
+  });
+  it('Debería devolver false si no es un archivo md', () => {
+    expect(route.md('README.js')).toBe(false);
+  });
+});
