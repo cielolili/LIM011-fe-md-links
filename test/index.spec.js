@@ -55,3 +55,38 @@ describe('md, debe devolver un valor Booleano', () => {
     expect(route.md('README.js')).toBe(false);
   });
 });
+describe('readDirectory, debe devolver un array con las rutas', () => {
+  it('Debería ser una función', () => {
+    expect(typeof route.readDirectory).toBe('function');
+  });
+  it('Debería devolver un array con los elementos que hay dentro del directorio', () => {
+    const inPutDirectory = '/home/cielo/Documentos/Markdown-Links/LIM011-fe-md-links/src';
+    const outPutDirectory = ['README.md', 'index.js'];
+    expect(route.readDirectory(inPutDirectory)).toEqual(outPutDirectory);
+  });
+});
+describe('readFile, debería devolver la información que hay en ese archivo', () => {
+  it('Debería ser una función', () => {
+    expect(typeof route.readFile).toBe('function');
+  });
+});
+describe('arrayMdDirectory, debería ser una función', () => {
+  it('Debería ser una función', () => {
+    expect(typeof route.arrayMdDirectory).toBe('function');
+  });
+  it('Debería devolver un array con rutas absolutas', () => {
+    const inPutArrayMdDirectory = '/home/cielo/Documentos/Markdown-Links/LIM011-fe-md-links/src';
+    const outPutArrayMdDirectory = ['/home/cielo/Documentos/Markdown-Links/LIM011-fe-md-links/src/README.md'];
+    expect(route.arrayMdDirectory(inPutArrayMdDirectory)).toEqual(outPutArrayMdDirectory);
+  });
+});
+describe('readFilesMd, debería ser una función', () => {
+  it('Debería ser una función', () => {
+    expect(typeof route.readFile).toBe('function');
+  });
+  it('Debería devolver un array con lo que hay dentro del archivo', () => {
+    const inPutReadFiles = '/home/cielo/Documentos/Markdown-Links/LIM011-fe-md-links/hola';
+    const outPutReadFIles = ['¡HOLA!'];
+    expect(route.readFilesMd(inPutReadFiles)).toEqual(outPutReadFIles);
+  });
+});
