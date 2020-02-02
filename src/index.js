@@ -1,5 +1,6 @@
 const path = require('path');
 const fs = require('fs');
+const marked = require('marked');
 
 const confirmAbsoluteRoute = (route) => path.isAbsolute(route);
 // console.log(path.isAbsolute('/home/cielo/Documentos/Markdown-Links/LIM011-fe-md-links'));
@@ -57,7 +58,20 @@ const readFilesMd = (route) => {
   });
   return array;
 };
+
 // console.log(readFilesMd('/home/cielo/Documentos/Markdown-Links/LIM011-fe-md-links/hola'));
+
+const links = (mdFile) => {
+  const renderer = new marked.Renderer();
+  const array = [];
+  renderer.link = (href, text, tittle) => {
+    array.push({ href, text, tittle });
+  };
+  marked(mdFile, { renderer });
+  return array;
+};
+console.log(links(readFile('/home/cielo/Documentos/Markdown-Links/LIM011-fe-md-links/src/README.md')));
+
 
 const route = {
   confirmAbsoluteRoute,
