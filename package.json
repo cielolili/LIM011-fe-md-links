@@ -2,7 +2,7 @@
   "name": "lim011-fe-md-links",
   "version": "1.0.0",
   "description": "## Preámbulo",
-  "main": "index.js",
+  "main": "src/index.js",
   "directories": {
     "test": "test"
   },

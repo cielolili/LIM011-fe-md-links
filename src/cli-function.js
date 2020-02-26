@@ -25,8 +25,7 @@ const functionCli = (path, options) => {
       stats += ` Total: ${stat.totalObjs(data)}\n Uniques: ${stat.statsUnique(data)}`;
       return stats;
     });
-  }
-  return mdlink.mdLinks(path, { validate: false }).then((data) => {
+  } return mdlink.mdLinks(path, { validate: false }).then((data) => {
     let links = '';
     data.forEach((element) => {
       links += `${element.href} ${element.File} ${element.text}\n`;
@@ -34,6 +33,9 @@ const functionCli = (path, options) => {
     return links;
   });
 };
+// eslint-disable-next-line max-len
+// functionCli('/home/cielo/Documentos/Markdown-Links/LIM011-fe-md-links/test/examples', { stats: '--stats' })
+// .then((res) => console.log(res));
 const functCli = {
   functionCli,
 };
