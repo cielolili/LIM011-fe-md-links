@@ -7,13 +7,16 @@
     "test": "test"
   },
   "dependencies": {
-    "marked": "^0.8.0"
-  },
+    "marked": "^0.8.0",
+    "node-fetch": "^2.6.0"
+    },
   "devDependencies": {
     "eslint": "^6.8.0",
     "eslint-config-airbnb-base": "^14.0.0",
     "eslint-plugin-import": "^2.20.0",
-    "jest": "^25.1.0"
+    "fetch-mock": "^9.0.0-beta.2",
+    "jest": "^25.1.0",
+    "jest-fetch-mock": "^3.0.1"
   },
   "scripts": {
     "eslint": "eslint --ext .js src/ test/",
@@ -26,6 +29,9 @@
   },
   "author": "",
   "license": "ISC",
+  "bin": {
+    "md-link": "src/cli.js"
+  },
   "bugs": {
     "url": "https://github.com/cielolili/LIM011-fe-md-links/issues"
   },

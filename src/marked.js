@@ -13,7 +13,7 @@ const links = (mdFile) => {
   marked(mdFile, { renderer });
   return array;
 };
-console.log(links(route.readFile('/home/cielo/Documentos/Markdown-Links/LIM011-fe-md-links/src/README.md')));
+// console.log(links(route.readFile('/home/cielo/Documentos/Markdown-Links/LIM011-fe-md-links/src/README.md')));
 /* const arrayLinks = (readFile) => {
   const array = [];
   const wardLinks = links(readFile);
