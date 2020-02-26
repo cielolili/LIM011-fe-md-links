@@ -26,7 +26,6 @@ const functionCli = (path, options) => {
       return stats;
     });
   }
-
   return mdlink.mdLinks(path, { validate: false }).then((data) => {
     let links = '';
     data.forEach((element) => {
@@ -35,9 +34,6 @@ const functionCli = (path, options) => {
     return links;
   });
 };
-// eslint-disable-next-line max-len
-// functionCli('/home/cielo/Documentos/Markdown-Links/LIM011-fe-md-links/test/examples', { stats: '--stats' })
-// .then((res) => console.log(res));
 const functCli = {
   functionCli,
 };

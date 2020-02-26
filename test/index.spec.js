@@ -61,7 +61,7 @@ describe('readDirectory, debe devolver un array con las rutas', () => {
   });
   it('Debería devolver un array con los elementos que hay dentro del directorio', () => {
     const inPutDirectory = path.join(process.cwd(), 'src');
-    const outPutDirectory = ['README.md', 'cli-function.js', 'cli.js', 'index.js', 'marked.js', 'mdLinks.js', 'stats.js'];
+    const outPutDirectory = ['README.md', 'cli-function.js', 'cli.js', 'index.js', 'mdLinks.js', 'stats.js'];
     expect(route.readDirectory(inPutDirectory)).toEqual(outPutDirectory);
   });
 });
