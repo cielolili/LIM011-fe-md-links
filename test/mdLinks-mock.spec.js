@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 const path = require('path');
 
-const fetchMock = require('../__mocks__/node-fetch');
+// const fetchMock = require('../__mocks__/node-fetch');
 const mdLink = require('../src/mdLinks.js');
 
 const outPutFive = [{
@@ -50,7 +50,7 @@ describe('mdLinks', () => {
     expect(typeof mdLink.mdLinks).toBe('function');
   });
   it('Debería devolver un array con 5 propiedades', (done) => {
-    mdLink.mdLinks(('/home/cielo/Documentos/Markdown-Links/LIM011-fe-md-links/test/examples/prueba1.md'), { validate: true })
+    mdLink.mdLinks(path.join(process.cwd(), 'test', 'examples', 'prueba1.md'), { validate: true })
       .then((response) => {
         expect(response).toEqual(outPutFive);
         done();

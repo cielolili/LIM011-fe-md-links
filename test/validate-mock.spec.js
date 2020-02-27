@@ -37,7 +37,7 @@ describe('validateLinks', () => {
     route.validateLinks(path.join(process.cwd(), 'test', 'examples', 'prueba1.md'))
       .then((response) => {
         expect(response).toEqual(outPutValidate);
+        done();
       });
-    done();
   });
 });
